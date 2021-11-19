@@ -1,13 +1,5 @@
 fun main() {
-    httpMethodFromString2("get")
-}
-
-fun httpMethodFromString2(string: String): HttpMethod2? = when (string.lowercase()) {
-    HttpMethod2.Get.toLowercase() -> HttpMethod2.Get
-    HttpMethod2.Post.toLowercase() -> HttpMethod2.Post
-    HttpMethod2.Delete.toLowercase() -> HttpMethod2.Delete
-    HttpMethod2.Put.toLowercase() -> HttpMethod2.Put
-    else -> null
+    HttpMethod2.getName()
 }
 
 enum class HttpMethod2 {
@@ -15,6 +7,13 @@ enum class HttpMethod2 {
     Post,
     Delete,
     Put;
+
+    companion object {
+        // essentially static
+        fun getName(): String {
+            return "httpmethod2"
+        }
+    }
 
     fun toLowercase(): String {
         return when (this) {

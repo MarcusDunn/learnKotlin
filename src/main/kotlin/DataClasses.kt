@@ -1,8 +1,11 @@
 fun main() {
 
 }
+// equivalent and good data class
+data class Location2(val latitude: Double, val longitude: Double, val alttidue: Double)
 
-class Location(val latitude: Double, val longitude: Double) {
+// bad normal class
+class Location(val latitude: Double, val longitude: Double, val alttidue: Double) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
